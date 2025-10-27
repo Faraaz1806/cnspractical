@@ -1,0 +1,176 @@
+﻿1. Mono-alphabetic Substitution Cipher
+Q1: What is a Mono-alphabetic Substitution Cipher?
+A: It’s an encryption technique where each letter in the plaintext is replaced by another letter. The substitution remains constant throughout the message.
+Q2: Give an example.
+A: If we map A→D, B→E, C→F, then “CAT” becomes “FDW”.
+Q3: What is its main weakness?
+A: It is vulnerable to frequency analysis because each plaintext letter always maps to the same ciphertext letter.
+Q4: What is the key?
+A: The key is the substitution mapping between plaintext and ciphertext alphabets.
+________________
+
+
+2. Playfair Cipher (Poly-alphabetic Substitution)
+Q1: What is the Playfair Cipher?
+A: It is a digraph substitution cipher that encrypts pairs of letters (bigrams) using a 5×5 matrix of alphabets.
+Q2: How is the key matrix created?
+A: A keyword is written first (removing duplicates), followed by the remaining unused letters of the alphabet (I and J are considered the same).
+Q3: What happens if both letters are the same?
+A: A filler letter (usually ‘X’) is inserted between them.
+Q4: What is one limitation of Playfair Cipher?
+A: It cannot encrypt a single letter alone; it always works in pairs.
+Q5: Example?
+A: Key = MONARCHY
+Matrix created → Encrypt “BALLOON” as “IBSUPMNR”.
+________________
+
+
+3. Vigenère Cipher
+Q1: What is the Vigenère Cipher?
+A: It’s a polyalphabetic cipher that uses a keyword to shift each letter of the plaintext by different amounts.
+Q2: How does it work?
+A: Each letter in the plaintext is shifted by the position value of the corresponding letter in the keyword.
+Q3: Example?
+A: Plaintext = “HELLO”, Key = “KEY” → Ciphertext = “RIJVS”.
+Q4: Why is it more secure than Caesar cipher?
+A: Because multiple substitution alphabets are used depending on the key letters.
+________________
+
+
+4. Wireshark Filters (Non-Promiscuous Mode)
+Q1: What is Wireshark used for?
+A: It’s a network packet analyzer used to capture and analyze network traffic.
+Q2: What is non-promiscuous mode?
+A: In this mode, the network card captures only the packets sent to or from the host machine.
+Q3: Give examples of filters.
+A:
+* ip.addr == 192.168.1.1 → Filter packets for a specific IP
+
+* tcp → Show only TCP packets
+
+* udp → Show only UDP packets
+
+* http → Show only HTTP packets
+
+* icmp → Show only ping packets
+
+Q4: Why use filters?
+A: To focus on specific traffic and reduce clutter during analysis.
+________________
+
+
+5. DES Algorithm
+Q1: What does DES stand for?
+A: Data Encryption Standard.
+Q2: What type of cipher is DES?
+A: Symmetric block cipher.
+Q3: What is the block and key size of DES?
+A: 64-bit block size and 56-bit effective key size.
+Q4: How many rounds does DES use?
+A: 16 rounds of substitution and permutation.
+Q5: What is its major drawback?
+A: It’s vulnerable to brute-force attacks due to its short key length.
+________________
+
+
+6. SHA-256 Hash Algorithm
+Q1: What is SHA-256?
+A: It’s a cryptographic hash function from the SHA-2 family that produces a 256-bit (32-byte) hash.
+Q2: Is SHA-256 reversible?
+A: No, hash functions are one-way; you can’t retrieve original data from the hash.
+Q3: What is a hash used for?
+A: To verify data integrity and securely store passwords.
+Q4: Example use?
+A: Verifying file downloads or blockchain transactions.
+________________
+
+
+7. SHA-512 Hash Algorithm
+Q1: What is SHA-512?
+A: It’s another member of the SHA-2 family that produces a 512-bit hash output.
+Q2: Difference between SHA-256 and SHA-512?
+A: The output size (512 bits vs 256 bits) and slightly different internal operations.
+Q3: Why use SHA-512?
+A: It offers stronger security but is slower and uses more memory.
+Q4: Is it still one-way?
+A: Yes, like all hash algorithms, it’s irreversible.
+________________
+
+
+8. Snort Security Tool
+Q1: What is Snort?
+A: It’s an open-source Intrusion Detection and Prevention System (IDS/IPS).
+Q2: What is it used for?
+A: To monitor network traffic and detect suspicious or malicious activity.
+Q3: Example commands/logs?
+A:
+   * snort -v → View captured packets
+
+   * snort -dev → Display packet details
+
+   * snort -c snort.conf → Run Snort with configuration file
+
+   * snort -T -c snort.conf → Test configuration
+
+   * snort -l /log → Log to specified directory
+
+Q4: What type of rules does Snort use?
+A: Signature-based rules to detect patterns of known attacks.
+________________
+
+
+
+
+9. RSA Algorithm
+Q1: What type of encryption is RSA?
+A: Asymmetric encryption using two keys – public and private.
+Q2: What are the key steps?
+A:
+      1. Choose two primes (p, q)
+
+      2. Compute n = p × q
+
+      3. Compute φ(n) = (p−1)(q−1)
+
+      4. Choose e such that 1<e<φ(n)
+
+      5. Find d such that e×d ≡ 1 mod φ(n)
+
+Q3: What is public and private key?
+A: Public key = (e, n), Private key = (d, n).
+Q4: Why is RSA secure?
+A: Because factoring large prime numbers is computationally hard.
+________________
+
+
+10. Keylogger Attack
+Q1: What is a keylogger?
+A: A software or hardware tool that records keystrokes made by a user.
+Q2: What is it used for?
+A: It can be used for monitoring (legitimate) or malicious data theft (passwords, messages).
+Q3: Name one open-source keylogger tool.
+A: PyKeylogger, Logkeys, or KidLogger.
+Q4: How to prevent keyloggers?
+A: Use antivirus, keep software updated, and avoid suspicious downloads.
+________________
+
+
+11. Nmap Tool
+Q1: What is Nmap?
+A: Network Mapper — an open-source tool used to scan networks and discover hosts/services.
+Q2: Common Nmap scan types?
+A:
+         * Ping Scan → nmap -sn <IP>
+
+         * TCP Scan → nmap -sT <IP>
+
+         * UDP Scan → nmap -sU <IP>
+
+         * OS Detection → nmap -O <IP>
+
+         * Port Range Scan → nmap -p 1-1000 <IP>
+
+Q3: What is the purpose of Nmap?
+A: To detect open ports, running services, and security weaknesses.
+Q4: Is Nmap legal?
+A: Yes, when used for authorized security testing.
