@@ -1,5 +1,5 @@
 # Simple DES Encryption & Decryption
-# By Mohammad Huzaifa :)
+
 
 from pyDes import des, CBC, PAD_PKCS5
 import binascii
